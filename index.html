@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta charset="utf-8"></meta>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <h2>Digital Journal</h2>
+        </header>
+        <div class= "entry-form-container">
+            <div id= "form">
+                <form class="form" style="">
+                    
+                    <input
+                    type="text"
+                    name="title"
+                    value=""
+                    placeholder="Title for Entry"
+                    class="input-text"
+                    />
+                    <br>
+                    
+                    <input
+                    type="text"
+                    name="text"
+                    value=""
+                    placeholder="Journal Entry"
+                    class="input-text"
+                    />
+                    
+                    <br>
+                    <select name="tags" id='post-tags'>
+                        <option value="angry">Angry</option>
+                        <option value="betrayed">Betrayed</option>
+                        <option value="exciting">Exciting</option>
+                        <option value="family">Family</option>
+                        <option value="friends">Friends</option>
+                        <option value="happy">Happy</option>
+                        <option value="loner">Loner</option>
+                        <option value="new-changes">New Changes</option>
+                        <option value="relationship">Relationship</option>
+                        <option value="sad">Sad</option>
+                        <option value="talk-to-therapist">Talk to Therapist</option>
+                        <option value="upset">Upset</option>
+                    </select>
+                    <!-- find ways to search by emotion and day!!!!!!!!! -->
+                    <br><br>
+
+                    <input
+                      type="submit"
+                      name="submit"
+                      value="Add Entry"
+                      class="submit"
+                    />
+    
+                    <br>
+    
+                    <br>
+                    
+                    
+                    </form>
+
+
+            </div>
+
+        </div>
+        <p>
+            <button id='new-journal-entry'>Add a new entry</button>
+        </p>
+        <div id= "all-entries">
+        </div>
+
+
+
+        <script type="text/javascript" src="src/index.js"></script>
+        <script type="text/javascript" src="src/photo.js"></script>
+        <script type="text/javascript" src="src/tag.js"></script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+header {
+  margin-top: 50px;
+}
+
+.entry-form-container {
+  margin: auto;
+  margin-top: 60px;
+}
+
+.form {
+    padding: 1rem;
+    width: stretch;
+    height: auto;
+    display: none;
+    background: #dadadac6;
+    opacity: .8;
+  }
+
+  .one-entry {
+    float: left;
+    width: 393px;
+    height: 555px;
+    background-color: wheat;
+    color: blue;
+    margin: 15px;
+    text-align: center;
+  }

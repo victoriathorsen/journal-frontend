@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "May 1st, 2021",
+      "text": "Great day for pottery",
+      "created_at": "2021-05-05T01:00:21.214Z",
+      "updated_at": "2021-05-05T01:00:21.214Z"
+    },
+    {
+      "id": 2,
+      "title": "May 2nd, 2021",
+      "text": "Fun day in Miami with the family",
+      "created_at": "2021-05-05T01:00:21.214Z",
+      "updated_at": "2021-05-05T01:00:21.214Z"
+    },
+    {
+      "title": "May 3rd, 2021",
+      "text": "Today was ass",
+      "id": 3
+    }
+  ]
+}
