@@ -1,5 +1,5 @@
-header {
-  margin-top: 50px;
+.header {
+  margin-top: 20px;
 }
 
 .entry-form-container {
@@ -16,12 +16,242 @@ header {
     opacity: .8;
   }
 
-  .one-entry {
+  /* .one-entry {
     float: left;
-    width: 393px;
-    height: 555px;
-    background-color: wheat;
-    color: blue;
+    width: 370px;
+    height: 250px;
+    background-color: rgb(251, 238, 214);
+    color: rgb(0, 0, 0);
     margin: 15px;
     text-align: center;
+  } */
+
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
   }
+
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+.therapistNotes {
+  text-align: center;
+  padding: 30px 0;
+  background: lavenderblush ;
+}
+
+
+.container {
+  padding: 64px;
+}
+
+.row {
+  padding: 15px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.row2 {
+  padding: 15px;
+}
+
+.row2:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+.large-font {
+  font-size: 48px;
+}
+
+.xlarge-font {
+  font-size: 64px
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: pink;
+  border-radius: 18px;
+
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: white;
+}
+
+#sortTag {
+  float: left;
+}
+
+#searchDate{
+  float: left;
+}
+
+/* Header/Blog Title */
+/* .header {
+  padding: 15px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+} */
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn { 
+  background: #f1f1f1;
+  padding: 15px; 
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  background: #f1f1f1;
+  float: left;
+  width: 25%;
+  padding: 25px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+#all-entries {
+  /* size: auto; */
+  height: auto;
+  padding: 10px;
+  margin: 20px;
+}
+
+.one-entry {
+  float: left;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  border: 3px solid grey;
+  background: white;
+}
+
+/* Clear floats after the columns */
+/* .row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+/* Footer */
+footer {
+  padding-top: 20px;
+  text-align: center;
+  /* background: #ddd; */
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}

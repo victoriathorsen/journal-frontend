@@ -1,82 +1,131 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
-        <title></title>
         <meta charset="utf-8"></meta>
+        <title></title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/search-date.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        <script>
+            $(document).ready(function(){
+              const date_input=$('input[name="date"]'); //our date input has the name "date"
+              const container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+              const options={
+                format: 'mm/dd/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+              };
+              date_input.datepicker(options);
+            });
+        </script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <h2>Digital Journal</h2>
-        </header>
-        <div class= "entry-form-container">
-            <div id= "form">
-                <form class="form" style="">
-                    
-                    <input
-                    type="text"
-                    name="title"
-                    value=""
-                    placeholder="Title for Entry"
-                    class="input-text"
-                    />
+        <div class= "header">
+            <!-- <h2>Digital Journal</h2> -->
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="column-66">
+                    <h1 class="xlarge-font"><b>JournalPro</b></h1>
+                    <h1 class="large-font" style="color:Pink;"><b>Digitize Your Journal</b></h1>
+                    <p><span style="font-size:36px"> Write a paperless entry anytime.</span> A never-ending journal that is always at your fingertips and impossible to misplace. Add 'tags' and a digital 'date' to mark or locate any entry.</p>
                     <br>
-                    
-                    <input
-                    type="text"
-                    name="text"
-                    value=""
-                    placeholder="Journal Entry"
-                    class="input-text"
-                    />
-                    
-                    <br>
-                    <select name="tags" id='post-tags'>
-                        <option value="angry">Angry</option>
-                        <option value="betrayed">Betrayed</option>
-                        <option value="exciting">Exciting</option>
-                        <option value="family">Family</option>
-                        <option value="friends">Friends</option>
-                        <option value="happy">Happy</option>
-                        <option value="loner">Loner</option>
-                        <option value="new-changes">New Changes</option>
-                        <option value="relationship">Relationship</option>
-                        <option value="sad">Sad</option>
-                        <option value="talk-to-therapist">Talk to Therapist</option>
-                        <option value="upset">Upset</option>
-                    </select>
-                    <!-- find ways to search by emotion and day!!!!!!!!! -->
-                    <br><br>
-
-                    <input
-                      type="submit"
-                      name="submit"
-                      value="Add Entry"
-                      class="submit"
-                    />
-    
-                    <br>
-    
-                    <br>
-                    
-                    
-                    </form>
-
-
+                    <button class="button" id= 'new-journal-entry'>Add Entry</button>
+                </div>
+                <div class="column-33">
+                    <img src="/journal_imgs/journal_photo.jpeg" width="335" height="471">
+                </div>
             </div>
+        </div>  
 
+        <div id= "container-for-divs"
+                <div class="row2">
+                    <div class= "entry-form-container">
+                        <div id= "form">
+                            <div class="bootstrap-iso">
+                                <div class="container-fluid">
+                                    <div class="row3">
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <form class="form" autocomplete="off">
+                                                <input class="form-control" id="date" name="date" placeholder="Date for Entry" type="text"/>
+                                                <input type="text" name="title" value="" placeholder="Title for Entry" class="input-text"/>
+                                                    <br>
+                                                <input type="text" name="text" value="" placeholder="Journal Entry" class="input-text"/>
+                                                    <br>
+                                                <select id='post-tags' name="tag" multiple='multiple'>
+
+                                                </select>
+                                                    <br>
+                                                    <br>
+                                                <input type="submit" name="submit" value="Add Entry" class="submit"/>
+                                                    <br>
+                                                    <br>
+                                            </form>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="leftcolumn">
+                    <div id= "post-sort-and-search">
+                        <div id= "sortTags">
+                            <a href= "">Tags</a>
+                            <!-- <a href= "">Tags</a> -->
+                        </div>
+                        <div id="searchDate" class="search-date "> 
+                            <div class="search-date__search-container">
+                                <input class="search-date__search-input" id="date-searched" name="date-searched" placeholder="Search by Date or Tag" type="text" spellcheck="false" autocomplete="off"/>
+                                <i class ="material-icons instant-search__icon">search</i>
+                            </div>
+                            <div class="search-date__results-container">
+                            </div>
+                        </div>
+                    </div>
+                    <div id= "all-entries">
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                    <!-- <span class="close">&times;</span> -->
+                                <div class= "addPostToModal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightcolumn">
+                    <div class="card" id="music-container">
+                        <!-- <h3>Music</h3> -->
+                        <div class="music-player">
+                            <iframe src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM" allow="autoplay" width="95%" height="335" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Therapist Notes</h3>
+                        <div class="therapistNotes" style="height:100px;" contentEditable= 'true'>Add Notes Here:</div>
+                    </div>
+                    <div class="card">
+                        <h3>Popular Post</h3>
+                        <div class="fakeimg">Image</div><br>
+                        <div class="fakeimg">Image</div><br>
+                        <div class="fakeimg">Image</div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p>
-            <button id='new-journal-entry'>Add a new entry</button>
-        </p>
-        <div id= "all-entries">
-        </div>
 
-
-
-        <script type="text/javascript" src="src/index.js"></script>
-        <script type="text/javascript" src="src/photo.js"></script>
+        <!-- <footer>
+            <p>Footer</p>
+        </footer> -->
+        
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="src/post.js"></script>
+        <script type="text/javascript" src="src/post_tag.js"></script>
         <script type="text/javascript" src="src/tag.js"></script>
     </body>
 </html>

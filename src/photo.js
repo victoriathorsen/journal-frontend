@@ -27,7 +27,8 @@
 // })
 
 class Photo {
-    constructor (img_src, caption) {
+    constructor (id, img_src, caption) {
+        this.id = id
         this.img_src = img_src; 
         this.caption = caption;
     }

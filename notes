@@ -1,0 +1,113 @@
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8"></meta>
+        <title></title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/search-date.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        <script>
+            $(document).ready(function(){
+              const date_input=$('input[name="date"]'); //our date input has the name "date"
+              const container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+              const options={
+                format: 'mm/dd/yyyy',
+                container: container,
+                todayHighlight: true,
+                autoclose: true,
+              };
+              date_input.datepicker(options);
+            });
+        </script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h2>Digital Journal</h2>
+        </header>
+        <div id= "music-container">
+            <div class="music-player">
+                <iframe src="https://open.spotify.com/embed/playlist/0vvXsWCC9xrXsKd4FyS8kM" width="20%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+        </div>
+        <div class= "entry-form-container">
+            <div id= "form">
+                <div class="bootstrap-iso">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                
+                            <form class="form" autocomplete="off">
+                                <input class="form-control" id="date" name="date" placeholder="Date for Entry" type="text"/>
+                                <input type="text" name="title" value="" placeholder="Title for Entry" class="input-text"/>
+                                    <br>
+                                <input type="text" name="text" value="" placeholder="Journal Entry" class="input-text"/>
+                                    <br>
+                                <select name="tag" id='post-tags'>
+                                    <option value="none" selected disabled hidden>
+                                            Select an Option
+                                    </option>
+                                    <option value="Angry">Angry</option>
+                                    <option value="Anxious">Anxious</option>
+                                    <option value="Betrayed">Betrayed</option>
+                                    <option value="Conflicted">Conflicted</option>
+                                    <option value="Challenged">Challenged</option>
+                                    <option value="Excited">Excited</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Friends">Friends</option>
+                                    <option value="Happy">Happy</option>
+                                    <option value="Jealous">Jealous</option>
+                                    <option value="Lonely">Lonely</option>
+                                    <option value="New-Changes">New Changes</option>
+                                    <option value="Relationships">Relationships</option>
+                                    <option value="Sad">Sad</option>
+                                    <option value="Talk-to-Therapist">Talk to Therapist</option>
+                                    <option value="Upset">Upset</option>
+                                </select>
+                                    <br>
+                                    <br>
+                                <input type="submit" name="submit" value="Add Entry" class="submit"/>
+                                    <br>
+                                    <br>
+                            </form>
+                        </div>
+                      </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+            <button id='new-journal-entry'>Add a new entry</button>
+        </p>
+
+        <div id="searchDate" class="search-date "> 
+           
+            
+            <div class="search-date__search-container">
+                <input class="search-date__search-input" id="date-searched" name="date-searched" placeholder="Search by Date" type="text" spellcheck="false" autocomplete="off"/>
+                <i class ="material-icons instant-search__icon">search</i>
+           
+
+            </div>
+            <div class="search-date__results-container">
+
+
+            </div>
+        </div>
+        <div id= "all-entries">
+        </div>
+
+
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="src/post.js"></script>
+
+
+        <script type="text/javascript" src="src/photo.js"></script>
+        <script type="text/javascript" src="src/tag.js"></script>
+    </body>
+</html> -->
