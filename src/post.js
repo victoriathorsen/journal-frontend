@@ -56,10 +56,11 @@ class Post {
     showFullFormInModal() {
         let createSettingsDiv = document.createElement('div')
         createSettingsDiv.setAttribute('class', 'settings')
+        createSettingsDiv.setAttribute('id', this.id)
         modalDIV.append(createSettingsDiv)
 
         let settingsBtn = document.createElement('button')
-        createSettingsDiv.setAttribute('id', this.id)
+        settingsBtn.setAttribute('class', 'settingsBtn')
         settingsBtn.innerText = '...'
         createSettingsDiv.append(settingsBtn)
         settingsBtn.addEventListener('click', openSettings)
@@ -98,7 +99,7 @@ class Post {
 // GET POST FOR MODAL
 
 displayPostByID = (postNum) => {
-    console.log(journal.postTags.filter(pt => pt.post_id === postNum))
+    // console.log(journal.postTags.filter(pt => pt.post_id === postNum))
     fetch(`${BASEURL}/posts/${postNum}`)
         .then(r => r.json())
         .then(post => {
@@ -120,8 +121,9 @@ displayPostByID = (postNum) => {
     function displayTagsOnModal(postID, tagId){
         let tagName = journal.tags.find(tag => tag.id === tagId).name
         const tagsToModal = document.querySelector('.full-entry').firstElementChild
+        // debugger
 
-        let tagBtn = document.createElement('btn')
+        let tagBtn = document.createElement('button')
         tagBtn.setAttribute('class', 'tagElements')
         tagBtn.type = 'button'
         tagBtn.innerText = `${tagName}`

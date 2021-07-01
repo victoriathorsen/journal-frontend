@@ -8,13 +8,26 @@ const performSearch = document.querySelector('.search-date__search-input')
 let dropdown = document.getElementById('post-tags');
 const onePost = document.getElementsByClassName('one-entry')
 let replaceModalDiv = document.querySelector(".addPostToModal")
+const tagLink = document.querySelector('#sortTags')
+
 
 
 let journal = {posts: [], tags: [], postTags: []}
 
 document.addEventListener("DOMContentLoaded", () => {
     loadPosts();
+    addTagLink();
 })
+
+    //////////////////////////////////////////////////
+    // ADD TAG LINK TO SHOW TAGS
+    
+    function addTagLink(){
+        let createTagLink = document.createElement('link')
+        createTagLink.setAttribute = ("class", "link")
+        createTagLink.innerText = 'Tags'
+        taglink.append(createTagLink)
+    }
 
     //////////////////////////////////////////////////
     // EVENT LISTENER FOR SHOW ENTRY FORM & POST FORM
@@ -46,7 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
             let tagsFromSelect = parseInt(tagCollection[i].value)
             selected.unshift(tagsFromSelect)
         }
-        postDistribute(e, selected)
+        if (e.target.title.value != ''){
+            postDistribute(e, selected)
+        }
     }
 
     //////////////////////////////////////////////////////
@@ -170,8 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // POSTing new Posts
 
     function postDistribute(e, tagsFromSelect){
-        let newPost = [e.target.date.value, e.target.title.value, e.target.text.value]
-        postEntry(newPost, tagsFromSelect)
+        let postValues = [e.target.date.value, e.target.title.value, e.target.text.value]
+        postEntry(postValues, tagsFromSelect)
     }
 
     function postEntry(postInfo, tagsFromSelect){
@@ -192,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json()
         })
         .then(post => {
-            console.log(post)
+            // console.log(post)
             // debugger
             let p = new Post(post.id, post.title, post.text, post.date)
             journal.posts.push(p)
@@ -274,7 +289,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 let editedPost = new Post(updatedPost.id, updatedPost.title, updatedPost.text, updatedPost.date, updatedPost.tag_id)
                 replaceModalDiv.innerHTML = ""
                 editedPost.showFullFormInModal()
+                // editedPost.displayPost
         })
+        // select the div, empty the HTML and then call the fetch again
     }
 
     ////////////////////////////////////////////////////////
@@ -298,20 +315,31 @@ document.addEventListener("DOMContentLoaded", () => {
     function filteredPosts(search){
         if (!!isNaN(search)) {
             let filteredTags = journal.tags.filter(tag => tag.name.toLowerCase().includes(search))
-            findPostGivenFilteredTags(filteredTags)
+            let answerForTags = findPostGivenFilteredTags(filteredTags)
+            // debugger
+            postTagsForSearchedPost(answerForTags)
+
         } else {
             return journal.posts.filter(post => post.date.includes(search))
         } 
     }
 
     function findPostGivenFilteredTags(tags){
-        let filteredTagsToFindPostOwner = journal.postTags.filter(pt => pt.tag_id.includes(tags))
-        return journal.posts.filter(post => post.id.includes(filteredTagsToFindPostOwner))
+        // debugger
+        for (let i=0; i < tags.length; i++){
+            debugger
+            let filteredTagsToFindPostOwner = journal.postTags.filter(pt => pt.tag_id.includes(tags[i]))
+            return journal.posts.filter(post => post.id.includes(filteredTagsToFindPostOwner))
+        }
+        
     }
 
     function showSearchedPosts(posts) { 
+        let individualPosts= []
         for (i=0; i < posts.length; i++) {
+            individualPosts.push(posts[i].id)
             posts[i].displayPost()
+   
             // let tagDiv = document.createElement('div')
             // tagDiv.setAttribute('class', 'tagContainer')
             // tagDiv.innerHTML = ''
@@ -332,5 +360,12 @@ document.addEventListener("DOMContentLoaded", () => {
             // divCard.append(tagDiv, h4, h3)
             // divContainer.append(divCard)
         }
-        fetchPostTagsForPost()
+        postTagsForSearchedPost(posts)
+    }
+
+    function postTagsForSearchedPost(individualPosts){
+        debugger
+        for (let i=0; i < individualPosts.length; i++){
+            let posts = journal.postTags.filter(pt => pt.post_id.includes(individualPosts[i]))
+        }
     }

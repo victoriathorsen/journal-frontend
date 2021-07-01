@@ -148,6 +148,15 @@ img {
   max-width: 100%;
 }
 
+.settingsBtn{
+  float: right;
+}
+
+.settings{
+  text-align: right;
+  float: right;
+}
+
 
 
 
