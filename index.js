@@ -16,18 +16,18 @@ let journal = {posts: [], tags: [], postTags: []}
 
 document.addEventListener("DOMContentLoaded", () => {
     loadPosts();
-    addTagLink();
+    // addTagLink();
 })
 
     //////////////////////////////////////////////////
     // ADD TAG LINK TO SHOW TAGS
     
-    function addTagLink(){
-        let createTagLink = document.createElement('link')
-        createTagLink.setAttribute = ("class", "link")
-        createTagLink.innerText = 'Tags'
-        taglink.append(createTagLink)
-    }
+    // function addTagLink(){
+    //     let createTagLink = document.createElement('link')
+    //     createTagLink.setAttribute = ("class", "link")
+    //     createTagLink.innerText = 'Tags'
+    //     taglink.append(createTagLink)
+    // }
 
     //////////////////////////////////////////////////
     // EVENT LISTENER FOR SHOW ENTRY FORM & POST FORM
@@ -207,8 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json()
         })
         .then(post => {
-            // console.log(post)
-            // debugger
             let p = new Post(post.id, post.title, post.text, post.date)
             journal.posts.push(p)
             p.displayPost()
